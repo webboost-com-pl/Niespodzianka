@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaremba Doradztwo</title>
+  <title>Maciej Iwanicki Ubezpieczenia</title>
   <style>
     :root{
       --ink:#061426;
@@ -665,6 +665,54 @@
   color:#9b1c1c;
   font-size:13px;
 }
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+.map{
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 28px 70px rgba(20,31,45,.16);
+  border:1px solid rgba(232,224,211,.9);
+}
+
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  filter:saturate(.9) contrast(.95);
+}
+
+.map:before{
+  display:none !important;
+}
+
+@media (max-width:760px){
+  .map{
+    margin:0 !important;
+    width:100% !important;
+    height:380px !important;
+    min-height:380px !important;
+    border-radius:22px !important;
+  }
+
+  .map iframe{
+    width:100% !important;
+    height:100% !important;
+  }
+
+  .location-card{
+    left:16px !important;
+    right:16px !important;
+    bottom:16px !important;
+    width:auto !important;
+    border-radius:18px;
+    padding:24px !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -701,7 +749,7 @@
 </div>
         <h1>Spokój dziś.<br>Bezpieczeństwo jutro.</h1>
 <p>Pomagam dobrać polisę dopasowaną do Twojej sytuacji.</p>
-        <a class="btn" href="#contact">Umów konsultację</a>
+        <a class="btn" href="#contact">Porozmawiajmy</a>
       </div>
  <img class="hero-img" src="hero.png" alt="">
     </section>
@@ -791,24 +839,37 @@
       </div>
     </section>
 
-    <section class="section dark-section" id="approach">
-      <div class="dark-lines"></div>
-      <div class="inner">
-        <div><div class="eyebrow"><span class="num">06</span><span>Dlaczego warto</span></div><h2>Niezależność<br>to nie opcja.<br>To odpowiedzialność.</h2></div>
-        <div><p>Nie jestem związany z żadnym towarzystwem ubezpieczeniowym. Pracuję wyłącznie w Twoim interesie. To pozwala mi doradzać uczciwie, obiektywnie i skutecznie.</p><div class="sign">M. Iwanicki</div></div>
+   <section class="section contact" id="contact">
+  <div class="inner">
+    <div class="contact-copy">
+      <div class="eyebrow">
+        <span class="num">07</span>
+        <span>Kontakt</span>
       </div>
-    </section>
 
-    <section class="section contact" id="contact">
-      <div class="inner">
-        <div class="contact-copy"><div class="eyebrow"><span class="num">07</span><span>Kontakt</span></div><h2>Porozmawiajmy<br>o Twoim planie.</h2><p>Zostaw wiadomość, a odezwę się, aby umówić dogodny termin rozmowy.</p></div>
-        <form class="form" onsubmit="event.preventDefault(); alert('Dziękujemy — wiadomość została przygotowana.');">
-          <input required placeholder="Imię i nazwisko" /><input type="email" required placeholder="E-mail" /><input required placeholder="Numer telefonu" /><textarea placeholder="Napisz, o co chcesz zapytać"></textarea><button class="btn" type="submit">Wyślij wiadomość</button>
-        </form>
-        <div class="map"><div class="pin"></div><div class="location-card"><strong>Zaremba Doradztwo</strong><p>ul. Mokotowska 1<br>00-640 Warszawa</p><a href="#top">Umów spotkanie →</a></div></div>
-       
-      </div>
-    </section>
+      <h2>Porozmawiajmy<br>o Twoim planie.</h2>
+      <p>Zostaw wiadomość, a odezwę się, aby umówić dogodny termin rozmowy.</p>
+    </div>
+
+    <form class="form" onsubmit="event.preventDefault(); alert('Dziękujemy — wiadomość została przygotowana.');">
+      <input required placeholder="Imię i nazwisko" />
+      <input type="email" required placeholder="E-mail" />
+      <input required placeholder="Numer telefonu" />
+      <textarea placeholder="Napisz, o co chcesz zapytać"></textarea>
+      <button class="btn" type="submit">Wyślij wiadomość</button>
+    </form>
+
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.98758450796!2d16.806160712287312!3d52.64213732706332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47041334167ad969%3A0xe152bfd58f22e6bb!2sMaciej%20Iwanicki%20Ubezpieczenia!5e0!3m2!1spl!2spl!4v1777986577637!5m2!1spl!2spl"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+
+    </div>
+  </div>
+</section>
     <footer class="site-footer">
   <strong>Maciej Iwanicki Ubezpieczenia</strong>
   <p>© 2026 Wszelkie prawa zastrzeżone</p>
