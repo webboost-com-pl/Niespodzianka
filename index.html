@@ -611,9 +611,71 @@
 .mobile-nav.active{
   transform: translateY(0);
 }
+/*HASLO ----------------------------------------------------------------------------------------------------*/
+
+#passwordScreen{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:#fbf7ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.passwordBox{
+  width:100%;
+  max-width:360px;
+  background:#fffdf8;
+  border:1px solid #e8e0d3;
+  box-shadow:0 30px 80px rgba(24,31,42,.14);
+  padding:38px 30px;
+  text-align:center;
+}
+
+.passwordBox h2{
+  font-size:34px;
+  margin-bottom:22px;
+}
+
+.passwordBox input{
+  width:100%;
+  padding:18px;
+  border:1px solid #ddd2c2;
+  margin-bottom:16px;
+  outline:none;
+}
+
+.passwordBox button{
+  width:100%;
+  border:0;
+  background:#06162a;
+  color:white;
+  padding:17px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+#passwordError{
+  margin-top:14px;
+  color:#9b1c1c;
+  font-size:13px;
+}
   </style>
 </head>
 <body>
+  <div id="passwordScreen">
+  <div class="passwordBox">
+    <h2>Wpisz hasło</h2>
+    <input id="passwordInput" type="password" placeholder="Hasło">
+    <button onclick="checkPassword()">Wejdź</button>
+    <p id="passwordError"></p>
+  </div>
+</div>
   <main class="page">
     <header class="header">
       <a class="logo" href="#"><strong>Maciej Iwanicki</strong><span>Ubezpieczenia</span></a>
@@ -771,6 +833,24 @@ menuBtn.addEventListener('click', () => {
   link.addEventListener('click', () => {
     mobileNav.classList.remove('active');
   });
+});
+function checkPassword(){
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+
+  if(input.value === 'TATA2026'){
+    document.getElementById('passwordScreen').style.display = 'none';
+  } else {
+    error.textContent = 'Błędne hasło. Spróbuj ponownie.';
+    input.value = '';
+    input.focus();
+  }
+}
+
+document.getElementById('passwordInput').addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){
+    checkPassword();
+  }
 });
   </script>
 </body>
